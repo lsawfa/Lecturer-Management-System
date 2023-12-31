@@ -1,3 +1,57 @@
+<?php
+$koneksi = mysqli_connect("localhost", "root","", "lecture_management");
+
+$query = "SELECT COUNT(*) AS total_aktivitas FROM aktivitas";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$total_aktivitas = $row['total_aktivitas'];
+
+$query = "SELECT COUNT(*) AS seminars FROM seminars";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$seminars = $row['seminars'];
+
+$query = "SELECT COUNT(*) AS total_pendampings FROM pendampings";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$total_pendampings = $row['total_pendampings'];
+
+$query = "SELECT COUNT(*) AS tugas_akhirs FROM tugas_akhirs";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$tugas_akhirs = $row['tugas_akhirs'];
+
+$query = "SELECT COUNT(*) AS pengujis FROM pengujis";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$pengujis = $row['pengujis'];
+
+$query = "SELECT COUNT(*) AS pembimbings FROM pembimbings";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$pembimbings = $row['pembimbings'];
+
+$query = "SELECT COUNT(*) AS pengembangan_p_k_s FROM pengembangan_p_k_s";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$pengembangan_p_k_s = $row['pengembangan_p_k_s'];
+
+$query = "SELECT COUNT(*) AS pengembangan_bahan_ajars FROM pengembangan_bahan_ajars";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$pengembangan_bahan_ajars = $row['pengembangan_bahan_ajars'];
+
+$query = "SELECT COUNT(*) AS orasi_ilmiahs FROM orasi_ilmiahs";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$orasi_ilmiahs = $row['orasi_ilmiahs'];
+
+$query = "SELECT COUNT(*) AS jabatans FROM jabatans";
+$result = mysqli_query($koneksi, $query);
+$row = mysqli_fetch_assoc($result);
+$jabatans = $row['jabatans'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +63,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -93,8 +148,72 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
+                <div class="box bg-white rounded-lg mr-3 col-span-3 pt-5 pb-5 mx-auto" >
+                    <div>
+                        <h1>Data Keaktifan Dosen</h1>
+                        <canvas id="myChart" width="800" height="400"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var d1 = <?php echo $total_aktivitas; ?>; 
+        var d2 = <?php echo $seminars; ?>; 
+        var d3 = <?php echo $total_pendampings; ?>; 
+        var d4 = <?php echo $tugas_akhirs; ?>; 
+        var d5 = <?php echo $pengujis; ?>; 
+        var d6 = <?php echo $pembimbings; ?>; 
+        var d7 = <?php echo $pengembangan_p_k_s; ?>; 
+        var d8 = <?php echo $pengembangan_bahan_ajars; ?>; 
+        var d9 = <?php echo $orasi_ilmiahs; ?>; 
+        var d10 = <?php echo $jabatans; ?>; 
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Perkuliahan', 'Seminar', 'KKN/PKN', 'Tugas Akhir', 'Examination Duty', 'Student Activities', 'Curriculum Development', 'Teaching Material Development', 'Scientifict Oration', 'Leadership Position'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10], 
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

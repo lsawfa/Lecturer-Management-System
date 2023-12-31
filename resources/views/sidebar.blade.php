@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       #logo-sidebar{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Montserrat', sans-serif !important;
         font-size: 13px;
       }
     </style>
     <title>Document</title>
 </head>
-<body class="bg-[#F0F1F3]">
+<body>
       <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 ">
          <span class="sr-only">Open sidebar</span>
          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
          </svg>
       </button>
       
-      <aside id="logo-sidebar" class="border-r-4 border-[#F0F1F3] fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 font-inter" aria-label="Sidebar">
+      <aside id="logo-sidebar" class="border-r-4 fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 font-inter" aria-label="Sidebar">
          <div class="h-full px-3 py-4 overflow-y-auto bg-white pt-10">
             <a href="" class="flex items-center ps-2.5 mb-5 justify-center">
                <img src="http://127.0.0.1:8000/assets/logo.png" class="h-10 me-3 sm:h-20" alt="Flowbite Logo" />
