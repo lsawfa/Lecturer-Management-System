@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <title>Penguji</title>
+    <title>Examination Duty</title>
     @php
 function ubahFormatTanggal($tanggal)
 {
@@ -211,15 +211,16 @@ $i=0;
                     <div class="grid grid-cols-2 mb-5">
                         <div class="flex w-full h-full  ps-5 items-center text-sm">Jenis Ujian Akhir</div>
                         <select id="tahun-ajaran" name="jenis_ujian_akhir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected value="Thesis">Thesis</option>
-                            <option value="Skripsi">Skripsi</option>
+                            <option selected value="Skripsi">Skripsi</option>    
+                            <option value="Thesis">Thesis</option>
+                            <option value="Disertasi">Disertasi</option>
                           </select>
                     </div>
                     <div class="grid grid-cols-2 mb-5">
                         <div class="flex w-full h-full  ps-5 items-center text-sm">Posisi Penguji</div>
                         <select id="tahun-ajaran" name="posisi_penguji" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected value="Penguji Utama">Penguji Utama</option>
-                            <option value="Penguji Pembantu">Penguji Pembantu</option>
+                            <option selected value="Penguji 1">Penguji 1</option>
+                            <option value="Penguji 2">Penguji 2</option>
                           </select>
                     </div>
                     <div class="grid grid-cols-2 mb-5">
