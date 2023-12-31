@@ -11,6 +11,30 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <title>Examination Duty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .tambahbutton {
+            background-color: #0C2C40 !important;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif !important;
+            background-color: #F5F5F5 !important;
+        }
+        .analysis{
+            margin-bottom: 10px !important!;
+        }
+        h1 {
+            font-weight: bold !important;
+            font-size: 30px !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+        h2 {
+            font-size: 20px !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+    </style>
     @php
 function ubahFormatTanggal($tanggal)
 {
@@ -86,10 +110,11 @@ $i=0;
 @endif
     <!-- Body Sidebar -->
     <div class="flex ms-72 mt-5 class font-inter flex-col">
+        <h1>Penguji</h1>
         <div class="grid grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
-            <h1>Penguji</h1>
+            <p>Penguji</p>    
             <div class="flex justify-end ">
-                <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
+                <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2 tambahbutton">
                     Tambahkan Penguji
                     </button>
             </div>
