@@ -35,6 +35,7 @@ Route::get('/aktivitas/detail/{id}', [AktivitasController::class, 'details'])->n
 Route::get('/aktivitas/delete/{id}', [AktivitasController::class, 'delete'])->name('delete-aktivitas');
 
 Route::get('/seminar', [SeminarController::class, 'index']);
+Route::get('/seminar/delete/{id}', [SeminarController::class, 'delete'])->name('seminar.delete');
 
 Route::get('/tugas-akhir', [TugasAkhirController::class, 'index']);
 
