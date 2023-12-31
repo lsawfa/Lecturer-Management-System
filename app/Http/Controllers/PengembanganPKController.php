@@ -57,4 +57,18 @@ class PengembanganPKController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+    public function delete($id)
+    {
+        try {
+            $pengembanganpk = PengembanganPK::find($id);
+            if ($pengembanganpk) {
+                $pengembanganpk->delete();
+                return redirect('/pengembangan-pk')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/pengembangan-pk')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/pengembangan-pk')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
 }

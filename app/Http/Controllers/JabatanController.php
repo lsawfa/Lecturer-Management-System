@@ -61,4 +61,18 @@ class JabatanController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+    public function delete($id)
+    {
+        try {
+            $jabatan = Jabatan::find($id);
+            if ($jabatan) {
+                $jabatan->delete();
+                return redirect('/jabatan')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/jabatan')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/jabatan')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
 }

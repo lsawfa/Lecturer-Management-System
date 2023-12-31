@@ -56,4 +56,18 @@ class PengembanganBahanAjarController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+    public function delete($id)
+    {
+        try {
+            $pengembanganbahanajar = PengembanganBahanAjar::find($id);
+            if ($pengembanganbahanajar) {
+                $pengembanganbahanajar->delete();
+                return redirect('/pengembangan-ba')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/pengembangan-ba')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/pengembangan-ba')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
 }

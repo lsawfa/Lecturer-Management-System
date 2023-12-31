@@ -77,4 +77,18 @@ class TugasAkhirController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+    public function delete($id)
+    {
+        try {
+            $tugasakhir = TugasAkhir::find($id);
+            if ($tugasakhir) {
+                $tugasakhir->delete();
+                return redirect('/tugas-akhir')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/tugas-akhir')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/tugas-akhir')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
 }

@@ -64,4 +64,18 @@ class PembimbingController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+    public function delete($id)
+    {
+        try {
+            $pembimbing = Pembimbing::find($id);
+            if ($pembimbing) {
+                $pembimbing->delete();
+                return redirect('/pembimbing')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/pembimbing')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/pembimbing')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
 }

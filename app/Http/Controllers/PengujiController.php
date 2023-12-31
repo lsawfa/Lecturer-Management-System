@@ -72,4 +72,18 @@ class PengujiController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+    public function delete($id)
+    {
+        try {
+            $penguji = Penguji::find($id);
+            if ($penguji) {
+                $penguji->delete();
+                return redirect('/penguji')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/penguji')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/penguji')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
 }

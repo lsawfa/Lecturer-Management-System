@@ -38,23 +38,30 @@ Route::get('/seminar', [SeminarController::class, 'index']);
 Route::get('/seminar/delete/{id}', [SeminarController::class, 'delete'])->name('seminar.delete');
 
 Route::get('/tugas-akhir', [TugasAkhirController::class, 'index']);
+Route::get('/tugas-akhir/delete/{id}', [TugasAkhirController::class, 'delete'])->name('tugasakhir.delete');
 
 Route::get('/pendamping', [PendampingController::class, 'index']);
 Route::get('/pendamping/delete/{id}', [PendampingController::class, 'delete'])->name('pendamping.delete');
 
 Route::get('/penguji', [PengujiController::class, 'index']);
+Route::get('/penguji/delete/{id}', [PengujiController::class, 'delete'])->name('penguji.delete');
 
 Route::get('/pembimbing', [PembimbingController::class, 'index']);
+Route::get('/pembimbing/delete/{id}', [PembimbingController::class, 'delete'])->name('pembimbing.delete');
 
 Route::get('/pengembangan-pk', [PengembanganPKController::class, 'index']);
+Route::get('/pengembangan-pk/delete/{id}', [PengembanganPKController::class, 'delete'])->name('pengembanganpk.delete');
 
 Route::get('/pengembangan-ba', [PengembanganBahanAjarController::class, 'index']);
+Route::get('/pengembangan-ba/delete/{id}', [PengembanganBahanAjarController::class, 'delete'])->name('pengembanganbahanajar.delete');
 
 Route::get('/orasi', [OrasiIlmiahController::class, 'index']);
+Route::get('/orasi/delete/{id}', [OrasiIlmiahController::class, 'delete'])->name('orasiilmiah.delete');
 
 Route::get('/login', [AuthController::class, 'index']);
 
 Route::get('/jabatan', [JabatanController::class, 'index']);
+Route::get('/jabatan/delete/{id}', [JabatanController::class, 'delete'])->name('jabatan.delete');
 
 
 Route::post('actionlogin', [AuthController::class, 'actionlogin'])->name('actionlogin');
