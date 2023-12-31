@@ -209,7 +209,6 @@ $i=0;
                         <div class="flex w-full h-full  ps-5 items-center text-sm">Jenis Bimbingan</div>
                         <select id="tahun-ajaran" name="jenis_bimbingan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected value="Skripsi">Skripsi</option>
-                            <option value="Tugas Akhir">Tugas Akhir</option>
                             <option value="Thesis">Thesis</option>
                             <option value="Disertasi">Disertasi</option>
                           </select>
@@ -217,8 +216,8 @@ $i=0;
                     <div class="grid grid-cols-2 mb-5">
                         <div class="flex w-full h-full  ps-5 items-center text-sm">Jenis Pembimbing</div>
                         <select id="tahun-ajaran" name="jenis_pembimbing" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected value="Pendamping Utama">Pendamping Utama</option>
-                            <option value="Pendamping Pembantu">Pendamping Pembantu</option>
+                            <option selected value="Pembimbing 1">Pembimbing 1</option>
+                            <option value="Pembimbing 2">Pembimbing 2</option>
                           </select>
                     </div>
                     <div class="grid grid-cols-2 mb-5">
