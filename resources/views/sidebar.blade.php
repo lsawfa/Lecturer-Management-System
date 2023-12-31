@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      #logo-sidebar{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+      }
+    </style>
     <title>Document</title>
 </head>
 <body class="bg-[#F0F1F3]">
@@ -137,7 +144,7 @@
               <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
             </div>
         </div>
-       </nav>
+      </nav>
    
 </body>
 </html>
