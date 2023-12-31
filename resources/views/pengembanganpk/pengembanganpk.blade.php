@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <title>Pengembangan Program Kuliah</title>
+    <title>Curriculum Development</title>
     @php
 function ubahFormatTanggal($tanggal)
 {

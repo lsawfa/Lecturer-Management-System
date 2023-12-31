@@ -87,7 +87,7 @@ $i=0;
     <!-- Body Sidebar -->
     <div class="flex ms-72 mt-5 class font-inter flex-col">
         <div class="grid grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
-            <h1>Membimbing Tugas Akhir</h1>
+            <h1>Bimbingan Tugas Akhir</h1>
             <div class="flex justify-end ">
                 <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
                     Tambahkan Tugas Akhir
@@ -177,7 +177,7 @@ $i=0;
               <!-- Modal header -->
               <div class="flex itexlms-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                   <h3 class="text- font-semibold text-gray-900 dark:text-white">
-                      Tambah Membimbing Tugas Akhir
+                      Tambah Bimbingan Tugas Akhir
                   </h3>
                   <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-add">
                       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">

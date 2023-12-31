@@ -87,10 +87,10 @@ $i=0;
     <!-- Body Sidebar -->
     <div class="flex ms-72 mt-5 class font-inter flex-col">
         <div class="grid grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
-            <h1>Pendamping</h1>
+            <h1>Pendampingan</h1>
             <div class="flex justify-end ">
                 <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
-                    Tambahkan Pendamping
+                    Tambahkan Pendampingan
                     </button>
             </div>
         </div>
