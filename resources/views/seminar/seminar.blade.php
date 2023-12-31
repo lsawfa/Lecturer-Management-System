@@ -1,6 +1,11 @@
 <?php
     $koneksi = mysqli_connect("localhost", "root","", "lecture_management");
 
+    $query = "SELECT COUNT(*) AS seminars FROM seminars";
+    $result = mysqli_query($koneksi, $query);
+    $row = mysqli_fetch_assoc($result);
+    $seminars = $row['seminars'];
+
     $queryByIdTwo = "SELECT COUNT(*) AS seminars_id FROM seminars WHERE id = 2";
     $resultByIdTwo = mysqli_query($koneksi, $queryByIdTwo);
     $rowByIdTwo = mysqli_fetch_assoc($resultByIdTwo);
@@ -35,6 +40,11 @@
         h1 {
             font-weight: bold !important;
             font-size: 30px !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+        h2 {
+            font-size: 20px !important;
             text-align: center !important;
             margin-bottom: 20px !important;
         }
@@ -205,6 +215,16 @@ $i=0;
                 @endforeach
                 </thead>
         </table>
+        <br>
+        <br>
+        <div class="grid h-full rounded-lg grid-cols-1 bg-white  w-11/12 h-16 ps-5 items-center" >
+            <h2>Data Keaktifan Dosen</h2> 
+            <div>   
+                <ul>
+                    <li>Total My Seminar: <span class="flex items-center mt-3">{{$seminars_id}}</span></li>
+                    <li>Total All Seminar: <span class="flex items-center mt-3">{{$seminars}}</span></li>
+                </ul>
+            </div>
     </div>
 
      <!-- Main modal -->
@@ -282,6 +302,7 @@ $i=0;
             </form>
           </div>
       </div>
+      <script>
 </body>
 <script>
     flatpickr("#datepicker", {
