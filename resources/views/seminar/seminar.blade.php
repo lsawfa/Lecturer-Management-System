@@ -1,3 +1,12 @@
+<?php
+    $koneksi = mysqli_connect("localhost", "root","", "lecture_management");
+
+    $queryByIdTwo = "SELECT COUNT(*) AS seminars_id FROM seminars WHERE id = 2";
+    $resultByIdTwo = mysqli_query($koneksi, $queryByIdTwo);
+    $rowByIdTwo = mysqli_fetch_assoc($resultByIdTwo);
+    $seminars_id = $rowByIdTwo['seminars_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +28,15 @@
         body {
             font-family: 'Montserrat', sans-serif !important;
             background-color: #F5F5F5 !important;
+        }
+        .analysis{
+            margin-bottom: 10px !important!;
+        }
+        h1 {
+            font-weight: bold !important;
+            font-size: 30px !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
         }
     </style>
     <title>Seminar</title>
@@ -97,8 +115,18 @@ $i=0;
 @endif
     <!-- Body Sidebar -->
     <div class="flex ms-72 mt-5 class font-inter flex-col">
-        <div class="grid grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
-            <h1>Seminar</h1>
+        <h1>Seminar</h1>
+        <div class="analysis rounded-lg grid grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
+            <div>
+            <div>
+                <p>Total Seminar</p>
+                    <span class="flex items-center mt-3">{{$seminars_id}}</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="grid rounded-lg grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
+            <p>Seminar</p>
             <div class="flex justify-end ">
                 <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="tambahbutton text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
                     Tambahkan Seminar
