@@ -40,6 +40,7 @@ Route::get('/seminar/delete/{id}', [SeminarController::class, 'delete'])->name('
 Route::get('/tugas-akhir', [TugasAkhirController::class, 'index']);
 
 Route::get('/pendamping', [PendampingController::class, 'index']);
+Route::get('/pendamping/delete/{id}', [PendampingController::class, 'delete'])->name('pendamping.delete');
 
 Route::get('/penguji', [PengujiController::class, 'index']);
 

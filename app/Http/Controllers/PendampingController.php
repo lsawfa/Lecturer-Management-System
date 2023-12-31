@@ -70,4 +70,20 @@ class PendampingController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
         }
     }
+
+    public function delete($id)
+    {
+        try {
+            $pendamping = Pendamping::find($id);
+            if ($pendamping) {
+                $pendamping->delete();
+                return redirect('/pendamping')->with(['success' => 'Data berhasil dihapus']);
+            } else {
+                return redirect('/pendamping')->with(['error' => 'Data tidak ditemukan']);
+            }
+        } catch (\Exception $e) {
+            return redirect('/pendamping')->with(['error' => 'Terjadi kesalahan saat menghapus data']);
+        }
+    }
+
 }
