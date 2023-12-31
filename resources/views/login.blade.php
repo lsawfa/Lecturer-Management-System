@@ -8,6 +8,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body{
+        background: #F5F5F5
+      }
+      h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px; 
+        font-weight: bold;
+      }
+      p, label, input{
+        font-family: 'Montserrat', sans-serif;
+      }
+      button {
+       background-color: #0C2C40 !important;
+      }
+</style>
     <title>Login Page</title>
 </head>
 <body>
@@ -18,14 +35,14 @@
       <!-- Grid -->
       <div class="grid h-screen grid-cols-2">
         <!-- First column -->
-        <div class="h-screen flex items-center justify-center font-inter">
-            <img src="assets/Logo.png" alt="" class="w-1/3">
+        <div class="h-screen flex flex-col items-center justify-center font-inter">
+          <img src="assets/vector.png" alt="" class="w-1/3">
         </div>
         <!-- First column -->
   
         <!-- Second column -->
-        <div class="h-screen flex flex-col items-center justify-center font-inter ">
-            <img src="assets/Logo.png" alt="" class="w-1/12">
+        <div class="h-screen flex flex-col items-center justify-center font-inter">
+            <h1>Web Managemen Dosen</h1>
             <p class="text-lg font-bold p-4">Login</p>
             @if(Session::has('status'))
             <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
@@ -53,7 +70,7 @@
                   <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"  placeholder="●●●●●●●●●" required>
 
                 </div>
-                <button type="submit" class="text-white bg-[#34a853] hover:bg-[#4ebe6c] focus:ring-1 focus:outline-none focus:ring-[#317c45] font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Submit</button>
+                <button type="submit" class="text-white bg-[#34a853] hover:bg-[#4ebe6c] focus:ring-1 focus:outline-none focus:ring-[#317c45] font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Log in</button>
               </form>
               
         </div>
