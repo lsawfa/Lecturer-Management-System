@@ -10,6 +10,22 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #F5F5F5 !important;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        h1 {
+            font-weight: bold !important;
+            font-size: 30px !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+        .bt-tambah {
+            background-color: #0C2C40 !important;
+        }
+    </style>
     <title>Perkuliahan</title>
 </head>
 @php
@@ -86,8 +102,8 @@ $i=0;
 @endif
     <!-- Body Sidebar -->
     <div class="flex ms-72 mt-5 class font-inter flex-col">
+        <h1>Perkuliahan</h1>
         <div class="bg-white  w-11/12 h-32 ps-5 pt-5">
-            <h1>Seluruh Perkuliahan</h1>
             <div class="grid grid-cols-3  w-2/3 mt-2">
                 <div>
                     <p>Total Perkuliahan</p>
@@ -106,20 +122,11 @@ $i=0;
         
         <div class="relative overflow-x-auto  mt-10 font-inter">
             <div class="grid grid-cols-2 bg-white  w-11/12 h-16 ps-5 items-center">
-                <h1>Perkuliahan</h1>
+                <p>Data Perkuliahan</p>
                 <div class="flex justify-end ">
-                    <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
+                    <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="bt-tambah text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
                         Tambahkan Perkuliahan
                         </button>
-                    <button type="button" class="text-gray-600 bg-[#FFFFFF] hover:bg-gray-200  border-2 focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-                          </svg>
-                        Filter
-                        </button>
-                        <button type="button" class="text-gray-600 bg-[#FFFFFF] hover:bg-gray-200  border-2 focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2">
-                            Tahun Ajaran
-                            </button>
                 </div>
             </div>
             <table class="w-11/12 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -129,7 +136,7 @@ $i=0;
                             No
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Aktivitas
+                            Mata Kuliah
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Tahun Ajaran
@@ -187,8 +194,8 @@ $i=0;
             </div>
             
         </div>
-  <!-- Main modal -->
-  <div id="modal-add" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <!-- Main modal -->
+    <div id="modal-add" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
       <div class="relative p-4 max-w-xl max-h-full">
           <!-- Modal content -->
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700" >
@@ -281,7 +288,6 @@ $i=0;
             </form>
           </div>
       </div>
-  </div>
     </div>
     <script>
         flatpickr("#datepicker", {
