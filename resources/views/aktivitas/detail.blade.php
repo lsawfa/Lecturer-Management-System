@@ -10,6 +10,14 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <title>Detail Perkuliahan</title>
+    <style>
+        .tambahkelas {
+            background-color: #0C2C40 !important;
+        }
+        body {
+            background-color: #F5F5F5 !important;
+        }
+    </style>
 </head>
 @php
 function ubahFormatTanggal($tanggal)
@@ -84,7 +92,7 @@ function ubahFormatHari($dayNum){
                 </div>
                 
                 <div class="grid grid-cols-2  mt-5 ms-5 text-sm w-2/5 text-gray-600">
-                    <p>Aktivitas</p>
+                    <p>Mata Kuliah</p>
                     <p class="text-gray-800">{{$aktivitas->nama_aktivitas}}</p>
                 </div>
                 <div class="grid grid-cols-2  mt-5 ms-5 text-sm w-2/5 text-gray-600">
@@ -123,7 +131,7 @@ function ubahFormatHari($dayNum){
             
             @if($aktivitas->nama_aktivitas == "Perkuliahan")                <!---- Table Body ------>
     <div id="container-kelas" class="w-full hidden">
-        <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center  items-center dark:focus:ring-[#1da1f2]/55 m-5 w-2/12">
+        <button data-modal-target="modal-add" data-modal-toggle="modal-add" type="button" class="tambahkelas text-white bg-[#10A760] hover:bg-[#12B76A] focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center  items-center dark:focus:ring-[#1da1f2]/55 m-5 w-2/12">
             Tambah Kelas
             </button>
         <table class="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
