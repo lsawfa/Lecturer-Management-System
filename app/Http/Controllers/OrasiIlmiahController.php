@@ -62,9 +62,9 @@ class OrasiIlmiahController extends Controller
             $orasiilmiah = OrasiIlmiah::find($id);
             if ($orasiilmiah) {
                 $orasiilmiah->delete();
-                return redirect('/orasiilmiah')->with(['success' => 'Data berhasil dihapus']);
+                return redirect('/orasi')->with(['success' => 'Data berhasil dihapus']);
             } else {
-                return redirect('/orasiilmiah')->with(['error' => 'Data tidak ditemukan']);
+                return redirect('/orasi')->with(['error' => 'Data tidak ditemukan']);
             }
         } catch (\Exception $e) {
             return redirect('/orasiilmiah')->with(['error' => 'Terjadi kesalahan saat menghapus data']);

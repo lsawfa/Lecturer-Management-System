@@ -130,7 +130,7 @@ public function update(Request $request): RedirectResponse
     }
 
 
-public function details($id)
+public function detail($id)
 {
     if (Auth::check()) {
         $aktivitas = Aktivitas::where('user_id', Auth::user()->getAuthIdentifier())
